@@ -5,15 +5,14 @@
 }
 
 .card {
-    max-width: 50em;
-    flex-direction: row;
+    max-width: 90%; /* Changed for better responsiveness */
+    flex-direction: column; /* Stack items on smaller screens */
     border: 0;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-
 }
 
 .card img {
-    max-width: 50%;
+    max-width: 100%; /* Use full width for mobile */
     margin: auto;
     padding: 0.5em;
     border-radius: 0.7em;
@@ -142,5 +141,37 @@
     to {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%; /* Use full width on mobile */
+        padding: 10px;
+    }
+
+    .custom-btn {
+        width: 100%; /* Full-width button on mobile */
+        padding: 12px; /* Adjust padding for better touch targets */
+    }
+
+    .custom-table th, .custom-table td {
+        padding: 10px; /* Adjust padding for smaller screens */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    .custom-action-btn {
+        font-size: 1rem; /* Smaller button size */
+        padding: 6px 8px; /* Adjust padding */
+    }
+
+    .header-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .header-container > * {
+        margin-bottom: 10px; /* Add space between elements */
     }
 }
